@@ -11,7 +11,7 @@
 	nix.settings.download-buffer-size = 629145600;
 
 	# Enable the nix-command feature.
-	nix.settings.experimental-features = [ "nix-command" ];
+	nix.settings.experimental-features = [ "nix-command" "flakes"];
 
 	# Make the `/etc/nixos/` directory and its files owned by the user.
 	systemd.tmpfiles.rules = [ "Z /etc/nixos 0755 ${config.userName} users - -"];

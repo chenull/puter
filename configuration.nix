@@ -24,6 +24,7 @@
       ./programs/git.nix              # Git and its settings.
       ./programs/internet.nix         # Web browsers, internet utilities.
       ./programs/micro.nix            # micro text editor.
+      ./programs/nvf.nix              # nvf - Modular, extensible and distro-agnostic Neovim for Nix
       ./programs/nvim.nix             # neovim text editor.
       ./programs/shell-utilities.nix  # Various shell utilities (shell, calendar, calculator, git…)
       ./programs/sysinfo.nix          # System monitoring, benchmarking, and information gathering.
