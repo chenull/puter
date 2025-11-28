@@ -10,6 +10,10 @@
 	normalWhite   = "e6e6e6";    dimWhite   = "999999";    brightWhite   = "ffffff";
 	normalYellow  = "ffc000";    dimYellow  = "b38600";    brightYellow  = "ffe880";
 in {
+	# Install all terminfo outputs
+	# alacritty, contour, foot, ghostty, kitty, mtm, rio, rxvt st, termite, tmux, wezterm, yaft
+	environment.enableAllTerminfo = true;
+
 	# Linux console (TTY) colors.
 	console = {
 		# The 16 colors palette used by the virtual consoles.

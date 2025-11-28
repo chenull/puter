@@ -15,19 +15,23 @@
       ./system/nixos.nix              # Nix and NixOS settings.
       ./system/packaging.nix          # Packaging configuration and supports (unfree software, Flatpak)
       ./system/ssh.nix                # OpenSSH configuration.
-      ./system/terminal-colors.nix    # Terminal colorscheme.
+      ./system/terminal.nix           # Terminal configurations and colorscheme.
 
       ./input/keyboard-layout.nix     # Keyboard layout configuration across all environments.
       ./input/utilities.nix           # Various input utilities.
 
       ./programs/foot.nix             # foot terminal emulator
       ./programs/git.nix              # Git and its settings.
+      ./programs/internet.nix         # Web browsers, internet utilities.
       ./programs/micro.nix            # micro text editor.
+      ./programs/nvim.nix             # neovim text editor.
       ./programs/shell-utilities.nix  # Various shell utilities (shell, calendar, calculator, git…)
       ./programs/sysinfo.nix          # System monitoring, benchmarking, and information gathering.
 
       ./desktop/dm.nix                # Display manager.
       ./desktop/fonts.nix             # Font configuration.
+	  ./desktop/fuzzel.nix            # launcher.
+	  ./desktop/icons.nix             # icons.
       ./desktop/niri.nix              # Niri Wayland compositor.
       ./desktop/waybar.nix            # Waybar bar on Niri session.
 
@@ -43,10 +47,4 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
   };
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-     vim
-  ];
 }
