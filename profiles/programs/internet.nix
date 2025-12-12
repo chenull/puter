@@ -1,0 +1,5 @@
+{ ... }: {
+  imports = [
+    ../../programs/internet.nix
+  ];
+}

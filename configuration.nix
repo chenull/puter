@@ -1,39 +1,16 @@
-{ ... }: {
+{ lib, ... }:
+let
+  # Define the current machine name here
+  # Change this to match your machine's hostname or create a new machine config
+  currentMachine = "solong";
+
+  # Alternatively, you can detect the hostname automatically:
+  # currentMachine = builtins.readFile /etc/hostname;
+in
+{
   imports = [
-    ./custom-modules/all.nix           # Custom modules imported globally.
-
-    ./hardware/devices/solong.nix      # hostname configuration.
-    ./hardware/generated/solong.nix    # generated at install
-
-    ./system/boot.nix                  # Boot configuration.
-    ./system/locale.nix                # Locale configuration (language, time, currency, measurement…)
-    ./system/networking.nix            # Networking configuration.
-    ./system/nixos.nix                 # Nix and NixOS settings.
-    ./system/packaging.nix             # Packaging configuration and supports (unfree software, Flatpak)
-    ./system/ssh.nix                   # OpenSSH configuration.
-    ./system/terminal.nix              # Terminal configurations and colorscheme.
-
-    ./input/keyboard-layout.nix        # Keyboard layout configuration across all environments.
-    ./input/utilities.nix              # Various input utilities.
-
-    ./programs/foot.nix                # foot terminal emulator
-    ./programs/git.nix                 # Git and its settings.
-    ./programs/internet.nix            # Web browsers, internet utilities.
-    ./programs/micro.nix               # micro text editor.
-    ./programs/nvf.nix                 # nvf - Modular, extensible and distro-agnostic Neovim for Nix
-    ./programs/nvim.nix                # neovim text editor.
-    ./programs/shell-utilities.nix     # Various shell utilities (shell, calendar, calculator, git…)
-    ./programs/sysinfo.nix             # System monitoring, benchmarking, and information gathering.
-
-    ./desktop/dm.nix                   # Display manager.
-    ./desktop/fonts.nix                # Font configuration.
-    ./desktop/fuzzel.nix               # launcher.
-    ./desktop/icons.nix                # icons.
-    ./desktop/niri.nix                 # Niri Wayland compositor.
-    ./desktop/waybar.nix               # Waybar bar on Niri session.
-
-    ./user/configUser.nix               # Module where the user name and title are defined.
-    ./user/home-manager.nix            # Support for Home Manager, managed system-wide.
-    ./user/settings.nix                # User settings (extra groups, home directory, user type…)
+    # Import the machine-specific configuration
+    # This file contains all the modules and profiles for this machine
+    (./machines + "/${currentMachine}.nix")
   ];
 }
